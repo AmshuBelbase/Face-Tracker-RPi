@@ -5,7 +5,7 @@ import numpy as np
 import time
 import requests
 
-url = 'http://192.168.232.23:5000/data'  # Replace with Pi's IP
+url = 'http://192.168.232.23:5002/data'  # Replace with Pi's IP
 
 cap = cv2.VideoCapture(2)
 ws, hs = 1280, 720
@@ -68,7 +68,7 @@ try:
                     stepper_v = int(abs(90 - int(servoX))*-1)
                     send_flag = 1
 
-                if servoY < 80 or servoY > 100:
+                if servoY < 70 or servoY > 110:
                     servoY = map_value(servoY, 0, 180, 90, 0)
                     servo_v = servoY - 45
                     send_flag = 1
